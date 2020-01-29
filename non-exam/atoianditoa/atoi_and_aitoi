@@ -1,0 +1,40 @@
+package main
+
+import (
+	"fmt"
+
+	"github.com/01-edu/z01"
+)
+
+func main() {
+	number := 105
+	fmt.Println(atoi("1856") / 2)
+	result_rune := []rune(aitoi(number))
+	for _, value := range result_rune {
+		z01.PrintRune(value)
+	}
+	z01.PrintRune(10)
+
+}
+
+func aitoi(num int) string {
+	str_result := ""
+	for num != 0 {
+		str_result = string(rune(num%10+'0')) + str_result
+		num = num / 10
+	}
+	return str_result
+}
+
+func atoi(str string) int {
+
+	result_number := 0
+	for _, value := range str {
+		decimal := 0
+		for i := '1'; i <= value; i++ {
+			decimal++
+		}
+		result_number = result_number*10 + decimal
+	}
+	return result_number
+}
